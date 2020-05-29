@@ -1,0 +1,90 @@
+{% include 'product/navigation.html' %} {% load static %}
+<title>MovieInfo || Best place to find movies</title>
+<link rel="icon" href="{% static 'product_img/login/logo-000.png' %}" />
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'static/css/detail_view.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container-fluid">
+    <div class="row hoding">
+        <div class="col-md-12 ">
+            <div class="hoding_img" style="background-image: url({{object.image.url}})"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="poster">
+                    <img src="{{ object.image.url }}" class="poster_img img-responsive" width="400" min-height="650" />
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <div class="movie_detail">
+                    <div class="header_title">
+                        <span><i class="fas fa-book-open"></i></span>
+                        <h3 class="title">Storyline</h3>
+                    </div>
+                    <div class="movie_detail_text">
+                        <p>{{object.description}}</p>
+                    </div>
+                    <div class="border"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="info_header">
+                    <h3 class="title">MovieInfo</h3>
+                </div>
+                <div class="info_section">
+                    <ul class="list-style-none list-inline">
+                        <li class="info_title">
+                            <span>Director:</span> {{object.director}} </li>
+                        <li class="info_title">
+                            <span>Actors:</span> {{object.actors}} </li>
+                        <li class="info_title">
+                            <span>Release Date: </span> {{object.release_date}} </li>
+                        <li class="info_title">
+                            <span>Country:</span> {{object.country}} </li>
+                        <li class="info_title">
+                            <span>Genres:</span> {{object.genre}} </li>
+                        <li class="info_title">
+                            <span>Language:</span> {{object.language}} </li>
+                    </ul>
+                </div>
+                {% if user.is_authenticated %}
+                <div class="movie">
+                    <div class="update">
+                        <a href="{% url 'product:update' object.id %}">
+                            <button type="button" class="update_btn">
+                             Update
+                            </button>
+                        </a>
+                    </div>
+                    <div class="delete">
+                        <a href="{% url 'product:delete' object.id %}">
+                            <button type="button" class="delete_btn">
+                             Delete
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-sm-9 links">
+                {% if user.is_authenticated %}
+                <div class="add_link">
+                    <a href="">
+                        <button type="button" class="add_btn">
+                         Add Download Links
+                        </button>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

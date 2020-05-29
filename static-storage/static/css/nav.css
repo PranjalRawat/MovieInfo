@@ -1,0 +1,26 @@
+.navigation ul {
+    text-align: center;
+    margin-left: auto;
+}
+
+.navigation ul li {
+    margin: 0 10px;
+}
+
+.nav-item a {
+    color: #fff;
+}
+
+.account {
+    background-color: #343a40 !important;
+    padding-left: 5px !important;
+}
+
+.account>a {
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #343a40 !important;
+    border: none !important;
+}
