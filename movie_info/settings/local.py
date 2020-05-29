@@ -124,7 +124,7 @@ STATICFILES_DIRS =[
     os.path.join(BASE_DIR, "static-storage"),
 ]
 
-STATIC_ROOT  = os.path.join(os.path.dirname(BASE_DIR), "static-serve")
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Base url to serve media files
 MEDIA_URL = '/media/'
