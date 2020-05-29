@@ -78,11 +78,14 @@ WSGI_APPLICATION = 'movie_info.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd5fqfvi69fpd0a',
+        'USER': 'ochfbiaruhzvyf',
+        'PASSWORD': '3ae829d0074d91a5f535fbd8ab4d21c0981dc0fefa8a9a3a01e108304b71a8ec',
+        'HOST': 'ec2-52-202-22-140.compute-1.amazonaws.com',
+        'PORT': '5432'
     }
 }
-
 import dj_database_url
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
