@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 SECRET_KEY = '@x9^gbt7_u^v_dvxmfs2ek4)g+w1p&#w47*8r43xb%qp$3z%1u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1","webmovieinfo.herokuapp.com"]
 
