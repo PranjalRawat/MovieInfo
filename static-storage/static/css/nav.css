@@ -3,6 +3,16 @@
     margin-left: auto;
 }
 
+a {
+    text-decoration: none !important;
+    color: #fff !important;
+    border: none;
+}
+
+a :hover {
+    text-decoration: none !important;
+}
+
 .navigation ul li {
     margin: 0 10px;
 }
@@ -23,4 +33,31 @@
 .btn-secondary {
     background-color: #343a40 !important;
     border: none !important;
+}
+
+@media (max-width: 992px) {
+    .search_form form {
+        text-align: center !important;
+        display: block ruby;
+    }
+    .form-control {
+        width: 80% !important;
+    }
+}
+
+@media (max-width: 586px) {
+    .form-control {
+        width: 60% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 392px) {
+    .search_form form {
+        display: block;
+    }
+    .form-control {
+        width: 90% !important;
+    }
 }

@@ -30,25 +30,29 @@
                 <a class="nav-link" href="{% url 'product:animated' %}">Animated</a>
             </li>
             <li class="nav-item dropdown dropright">
+
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Admin
                   </a>
-                <div class="dropdown-menu account" aria-labelledby="navbarDropdownMenuLink">
-                    {% if user.is_authenticated %}
-                    <span class="navbar-brand" id="id_username">Welcome {{request.user.username}}!</span>
-                    <a href="{% url 'product:logout' %}">Log Out</a> {% else %}
-                    <a href="{% url 'product:login' %}">Log In</a>
-                    <a href="{% url 'product:signup' %}">Sign Up</a> {% endif %}
-                </div>
+                <ul>
+                    <div class="dropdown-menu account" aria-labelledby="navbarDropdownMenuLink">
+                        {% if user.is_authenticated %}
+                        <li> <span class="navbar-brand" id="id_username">Welcome {{request.user.username}}!</span></li>
+                        <li><a href="{% url 'product:logout' %}">Log Out</a></li> {% else %}
+                        <li> <a href="{% url 'product:login' %}">Log In</a></li>
+                        <li> <a href="{% url 'product:signup' %}">Sign Up</a> </li>{% endif %}
+                    </div>
+                </ul>
             </li>
         </ul>
-        <form method='GET' action='{% url "product:list" %}' class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" name='q' placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <div class="search_form">
+            <form method='GET' action='{% url "product:list" %}' class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" name='q' placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
 
 
-
+        </div>
 
     </div>
 </nav>

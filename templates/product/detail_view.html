@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
+        <div class="row up">
             <div class="col-sm-3">
                 <div class="poster">
                     <img src="{{ object.image.url }}" class="poster_img img-responsive" width="400" min-height="650" />
@@ -34,7 +34,7 @@
     </div>
     <br><br>
     <div class="container">
-        <div class="row">
+        <div class="row down">
             <div class="col-sm-3">
                 <div class="info_header">
                     <h3 class="title">MovieInfo</h3>
@@ -75,6 +75,7 @@
                 {% endif %}
             </div>
             <div class="col-sm-9 links">
+
                 {% if user.is_authenticated %}
                 <div class="add_link">
                     <a href="">

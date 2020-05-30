@@ -14,7 +14,7 @@ class ProductCreateView(LoginRequiredMixin, FormUserNeededMixin, CreateView):
     template_name = "product/create_view.html"
     success_url = "/"
 
-    login_url = "/admin/"
+    login_url = "/login/"
 
 class ProductUpdateView(LoginRequiredMixin, UserOwnerMixin, UpdateView):
     queryset = AddProduct.objects.all()

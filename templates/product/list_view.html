@@ -14,7 +14,20 @@
 
     <div class="container-fluid">
         <div class="row">
-            {% for movie in movie_list %}
+            {% if user.is_authenticated %}
+            <div class="col-md-3">
+                <a href="{% url 'product:create' %}">
+                    <div class="col1">
+                        <img src="{% static 'product_img/add.png' %}" class="list_img" alt="IMG">
+                    </div>
+                    <div class="btn_op">
+                        <button type="button" class="detail_btn">
+                         Add Movie
+                        </button>
+                    </div>
+                </a>
+            </div>
+            {% endif %} {% for movie in movie_list %}
             <div class="col-md-3">
                 <div class="col1">
                     <img src="{{ movie.image.url }}" class="list_img" />
@@ -28,9 +41,13 @@
                 </div>
             </div>
             {% empty %} {% if request.GET.q %}
-            <p>No Movies found </p>
+            <div class="col-md-9 else">
+                <p>No Movies found </p>
+            </div>
             {% else %}
-            <p>No Movies yet </p>
+            <div class="col-md-9 else">
+                <p>No Movies yet </p>
+            </div>
             {% endif %} {% endfor %}
         </div>
     </div>
