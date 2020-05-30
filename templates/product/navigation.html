@@ -1,60 +1,67 @@
  {% load static %}
-<meta content="width=device-width, initial-scale=1" name="viewport" />
-<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-<link rel="stylesheet" href="{% static 'static/css/nav.css' %}">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<html>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="icon" href="{% static 'product_img/login/logo-000.png' %}" />
 
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'static/css/nav.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-    <a class="navbar-brand" href="{% url 'product:list' %}">Movie Info</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <a class="navbar-brand" href="{% url 'product:list' %}">Movie Info</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
 
-    <div class="collapse navbar-collapse navigation" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <div class="collapse navbar-collapse navigation" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'product:hollywood' %}">Hollywood</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'product:bollywood' %}">Bollywood</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'product:tollywood' %}">Tollywood</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'product:animated' %}">Animated</a>
-            </li>
-            <li class="nav-item dropdown dropright">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'product:hollywood' %}">Hollywood</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'product:bollywood' %}">Bollywood</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'product:tollywood' %}">Tollywood</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'product:animated' %}">Animated</a>
+                </li>
+                <li class="nav-item dropdown dropright">
 
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Admin
                   </a>
-                <ul>
-                    <div class="dropdown-menu account" aria-labelledby="navbarDropdownMenuLink">
-                        {% if user.is_authenticated %}
-                        <li> <span class="navbar-brand" id="id_username">Welcome {{request.user.username}}!</span></li>
-                        <li><a href="{% url 'product:logout' %}">Log Out</a></li> {% else %}
-                        <li> <a href="{% url 'product:login' %}">Log In</a></li>
-                        <li> <a href="{% url 'product:signup' %}">Sign Up</a> </li>{% endif %}
-                    </div>
-                </ul>
-            </li>
-        </ul>
-        <div class="search_form">
-            <form method='GET' action='{% url "product:list" %}' class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" name='q' placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+                    <ul>
+                        <div class="dropdown-menu account" aria-labelledby="navbarDropdownMenuLink">
+                            {% if user.is_authenticated %}
+                            <li> <span class="navbar-brand" id="id_username">Welcome {{request.user.username}}!</span></li>
+                            <li><a href="{% url 'product:logout' %}">Log Out</a></li> {% else %}
+                            <li> <a href="{% url 'product:login' %}">Log In</a></li>
+                            <li> <a href="{% url 'product:signup' %}">Sign Up</a> </li>{% endif %}
+                        </div>
+                    </ul>
+                </li>
+            </ul>
+            <div class="search_form">
+                <form method='GET' action='{% url "product:list" %}' class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" name='q' placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
 
+
+            </div>
 
         </div>
-
-    </div>
-</nav>
-{% block list %} {% endblock %}
+    </nav>
+    {% block list %} {% endblock %}
+</body>

@@ -1,0 +1,110 @@
+body {
+    background-color: #ffe !important;
+}
+
+a {
+    text-decoration: none !important;
+    color: #fff !important;
+    border: none;
+}
+
+a :hover {
+    text-decoration: none !important;
+}
+
+.container-fluid {
+    margin-top: 20px;
+}
+
+.list_img {
+    margin: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 380px;
+}
+
+.btn_op {
+    text-align: center;
+}
+
+.detail_btn {
+    display: inline-block;
+    width: 100%;
+    padding: 7px;
+    background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+    margin-bottom: 20px;
+}
+
+.col1 {
+    margin: 3px;
+    min-height: 380px;
+    text-align: center;
+    border: solid 2px #f7dfa5;
+}
+
+.page-link {
+    background: linear-gradient(to bottom, #f7dfa5, #f0c14b) !important;
+}
+
+.page-link>a {
+    color: #000 !important;
+}
+
+.else {
+    text-align: center;
+    margin-top: 3%;
+}
+
+.else p {
+    font-size: 10vw;
+}
+
+@media only screen and (max-width: 992px) {
+    .col-md-3 {
+        -ms-flex: 0 0 50% !important;
+        flex: 0 0 50% !important;
+        max-width: 40% !important;
+        margin: auto !important;
+    }
+    .col-md-9 {
+        -ms-flex: 0 0 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        margin: auto !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .col-md-3 {
+        max-width: 50% !important;
+        margin: auto !important;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .col-md-3 {
+        -ms-flex: 0 0 70% !important;
+        flex: 0 0 70% !important;
+        max-width: 70% !important;
+        margin: auto !important;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .col-md-3 {
+        -ms-flex: 0 0 90% !important;
+        flex: 0 0 90% !important;
+        max-width: 90% !important;
+        margin: auto !important;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .col-md-3 {
+        -ms-flex: 0 0 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        margin: auto !important;
+    }
+}
